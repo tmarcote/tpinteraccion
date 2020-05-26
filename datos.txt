@@ -1,0 +1,11 @@
+nombres
+apellidos
+dni
+cuil/cuit
+fecha de nacimiento
+genero
+nacionalidad
+direccion (provincia, ciudad, calle, nro, cp)
+email
+telefono
+ocupacion
