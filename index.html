@@ -6,24 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>ANSES - Formulario</title>
+    <title>ANSES - Alta jubilación ordinaria</title>
     <!-- Bootstrap core CSS -->
     <link href="./public/bootstrap4/css/bootstrap.min.css" rel="stylesheet">
     <link href="./public/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
     .navbar.navbar-light {
       background-color: #0D5998;
     }
     .btn.btn-primary {
       background-color: #0D5998;
+      font-size: 1.5rem;
     }
     .custom-control-input:checked~.custom-control-label::before {
       background-color: #0D5998;
       border-color: #0D5998;
     }
     #nacimiento {
-      max-width:120px;
+      max-width:140px;
     }
+    label {
+     font-size: 1.5rem;
+    }
+    label.custom-control-label {
+      line-height: 25px;
+      margin-bottom: 5px;
+    }
+    .form-control {
+      font-size: 1.3rem;
+    }
+    .custom-select {
+      font-size: 1.3rem;
+    }
+    #add-job {
+      font-size: 1.3rem;
+      color: #fff;
+    }
+    #remove-job {
+      font-size: 1.3rem;
+      color: #fff;
+    }
+    .ayuda {
+      font-size: 1.2rem;
+      margin-left: 5px;
+    }
+    .tooltip-inner {
+      font-size: 1.1rem;
+    }
+
     @media (max-width: 768px) {
       #cp {
         max-width:120px
@@ -40,13 +72,14 @@
     </nav>
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-6">
-          <h4 class="mt-4 mb-3">Ingrese sus datos personales:</h4>
+        <div class="col-md-7">
+          <h2 class="mt-4 mb-3">Alta de Jubilación Ordinaria:</h2>
           <form class="needs-validation" novalidate>
             <div class="row">
               <div class="col-md-12 mb-3">
-                <label for="nombres">Nombres</label>
-                <input type="text" class="form-control" id="nombres" placeholder="" value="" required>
+                <label for="nombres">Nombres</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Nombres del solicitante."></i>
+
+                <input type="text" class="form-control" id="nombres" placeholder="Nombres del solicitante" value="" required>
                 <div class="invalid-feedback">
                   El campo es obligatorio.
                 </div>
@@ -55,8 +88,8 @@
 
             <div class="row">
               <div class="col-md-12 mb-3">
-                <label for="apellidos">Apellidos</label>
-                <input type="text" class="form-control" id="apellidos" placeholder="" value="" required>
+                <label for="apellidos">Apellidos</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Apellidos del solicitante."></i>
+                <input type="text" class="form-control" id="apellidos" placeholder="Apellidos del solicitante" value="" required>
                 <div class="invalid-feedback">
                   El campo es obligatorio.
                 </div>
@@ -65,8 +98,8 @@
 
             <div class="row">
               <div class="col-md-12 mb-3">
-                <label for="dni">DNI</label>
-                <input type="number"  maxlength="8" class="form-control" id="dni" placeholder="" value="" required>
+                <label for="dni">DNI</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Número de documento sin guiones ni espacios."></i>
+                <input type="number"  maxlength="8" class="form-control" id="dni" placeholder="Número de documento" value="" required>
                 <div class="invalid-feedback">
                   El campo es obligatorio.
                 </div>
@@ -75,8 +108,8 @@
 
             <div class="row">
               <div class="col-md-12 mb-3">
-                <label for="cuit">CUIT/CUIL</label>
-                <input type="number" maxlength="11" class="form-control" id="cuit" placeholder="" value="" required>
+                <label for="cuit">CUIT/CUIL</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Número de cuit/cuil sin guiones ni espacios."></i>
+                <input type="number" maxlength="11" class="form-control" id="cuit" placeholder="Número de CUIT" value="" required>
                 <div class="invalid-feedback">
                   El campo es obligatorio.
                 </div>
@@ -85,34 +118,32 @@
 
             <div class="row">
               <div class="col-md-12 mb-3">
-                <label for="nacimiento">Fecha de Nacimiento</label>
+                <label for="nacimiento">Fecha de Nacimiento</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Fecha de nacimiento del solicitante en formato dd/mm/aaaa."></i>
                 <input type="text" class="form-control" id="nacimiento" placeholder="dd/mm/aaaa" value="" required>
                 <div class="invalid-feedback">
-                  Ingrese una fecha valida en el formato dd/mm/yyyy
+                  Ingrese una fecha válida en el formato dd/mm/yyyy
                 </div>
               </div>
             </div>
 
             <div class="row">
               <div class="col-md-12 mb-3">
-                <label for="genero">Genero</label>
-                <div class="d-block">
-                  <div class="custom-control custom-radio">
-                    <input id="femenino" name="genero" type="radio" class="custom-control-input" checked required>
-                    <label class="custom-control-label" for="credit">Femenino</label>
-                  </div>
-                  <div class="custom-control custom-radio">
-                    <input id="masculuno" name="genero" type="radio" class="custom-control-input" required>
-                    <label class="custom-control-label" for="debit">Masculino</label>
-                  </div>
+                <label for="genero">Genero</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Seleccione el género del solicitante."></i>
+                <div class="custom-control custom-radio">
+                  <input id="masculino" name="genero" type="radio" class="custom-control-input" checked required>
+                  <label class="custom-control-label" for="masculino">Masculino</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="femenino" name="genero" type="radio" class="custom-control-input" required>
+                  <label class="custom-control-label" for="femenino">Femenino</label>
                 </div>
               </div>
             </div>
 
             <div class="row">
               <div class="col-md-12 mb-3">
-                <label for="nacionalidad">Nacionalidad</label>
-                <input type="text" class="form-control" id="nacionalidad" placeholder="" value="" required>
+                <label for="nacionalidad">Nacionalidad</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Nacionalidad del solicitante."></i>
+                <input type="text" class="form-control" id="nacionalidad" placeholder="Nacionalidad del solicitante" value="" required>
                 <div class="invalid-feedback">
                   El campo es obligatorio.
                 </div>
@@ -121,17 +152,7 @@
 
             <div class="row">
               <div class="col-md-12 mb-3">
-                <label for="ocupacion">Ocupación</label>
-                <input type="text" class="form-control" id="ocupacion" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  El campo es obligatorio.
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12 mb-3">
-                <label for="email">Email <span class="text-muted">(Opcional)</span></label>
+                <label for="email">Correo electrónico <span class="text-muted">(Opcional)</span></label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Ingrese el correo del solicitante en formato nombre@ejemplo.com"></i>
                 <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
                 <div class="invalid-feedback">
                   Ingrese un formato de email valido.
@@ -141,8 +162,8 @@
 
             <div class="row">
               <div class="col-md-12 mb-3">
-                <label for="telefono">Teléfono</label>
-                <input type="number" class="form-control" id="telefono" required>
+                <label for="telefono">Teléfono</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Número de teléfono del solicitante."></i>
+                <input type="number" class="form-control" id="telefono" placeholder="Teléfono del solicitante" required>
                 <div class="invalid-feedback">
                   El campo es obligatorio.
                 </div>
@@ -151,7 +172,7 @@
 
             <div class="row">
               <div class="col-md-12 mb-3">
-                <label for="direccion">Dirección</label>
+                <label for="direccion">Dirección</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Dirección donde reside el solicitante (calle y número)."></i>
                 <input type="text" class="form-control" id="direccion" placeholder="Calle 1234" required>
                 <div class="invalid-feedback">
                   El campo es obligatorio.
@@ -161,7 +182,7 @@
 
             <div class="row">
               <div class="col-md-4 mb-3">
-                <label for="provincia">Provincia</label>
+                <label for="provincia">Provincia</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Provincia donde reside el solicitante."></i>
                 <select class="custom-select d-block w-100" id="provincia" required>
                   <option value="">Seleccionar...</option>
                   <option>Buenos Aires</option>
@@ -171,7 +192,7 @@
                 </div>
               </div>
               <div class="col-md-4 mb-3">
-                <label for="ciudad">Ciudad</label>
+                <label for="ciudad">Ciudad</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Ciudad donde reside el solicitante."></i>
                 <select class="custom-select d-block w-100" id="ciudad" required>
                   <option value="">Seleccionar...</option>
                   <option>Avellaneda</option>
@@ -181,14 +202,82 @@
                 </div>
               </div>
               <div class="col-md-4 mb-3">
-                <label for="cp">Código Postal</label>
+                <label for="cp">Código Postal</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Código postal de la localidad donde reside el solicitante."></i>
                 <input type="number" class="form-control" id="cp" placeholder="1234" required>
                 <div class="invalid-feedback">
                   El campo es obligatorio.
                 </div>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="banco">Banco donde percibir habéres</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Razón social del banco donde desea percibir los haberes."></i>
+                <input type="text" class="form-control" id="banco" placeholder="Nombre del banco" required>
+                <div class="invalid-feedback">
+                  El campo es obligatorio.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="cbu">CBU</label><i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="CBU de la cuenta donde desea percibir los haberes."></i>
+                <input type="number" class="form-control" id="cbu" placeholder="Número de CBU" required>
+                <div class="invalid-feedback">
+                  El campo es obligatorio.
+                </div>
+              </div>
+            </div>
+
             <hr class="mb-4">
+            <h4>Historial laboral:<i class="fa fa-question-circle-o ayuda" data-toggle="tooltip" data-placement="top" title="Historial de empleos. Ingrese empresa, cargo y periodos para cada empleo. Puede agregar y quitar empleos según lo necesite."></i> </br>Detalle cronológico de servicios prestados:</h4>
+            </br>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <a id="add-job" class="btn btn-primary"><i class="fa fa-plus"></i> Agregar empleo</a>
+              </div>
+              <div class="col-md-6 mb-3">
+                <a id="remove-job" class="btn btn-primary"><i class="fa fa-minus"></i> Quitar empleo</a>
+              </div>
+            </div>
+            <div id="jobs-container">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="empresa1">Empresa</label>
+                  <input type="text" class="form-control" id="empresa1" placeholder="Empresa" required>
+                  <div class="invalid-feedback">
+                    El campo es obligatorio.
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="tarea1">Tarea o cargo</label>
+                  <input type="text" class="form-control" id="tarea1" placeholder="Tarea o cargo" required>
+                  <div class="invalid-feedback">
+                    El campo es obligatorio.
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="desde1">Desde</label>
+                  <input type="text" class="form-control" id="desde1" placeholder="dd/mm/aaaa" value="" required>
+                  <div class="invalid-feedback">
+                    Ingrese una fecha válida en el formato dd/mm/yyyy
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="hasta1">Hasta</label>
+                  <input type="text" class="form-control" id="hasta1" placeholder="dd/mm/aaaa" value="" required>
+                  <div class="invalid-feedback">
+                    Ingrese una fecha válida en el formato dd/mm/yyyy
+                  </div>
+                </div>
+              </div>
+
+              <hr class="mb-4">
+            </div>
+
             <button class="btn btn-primary btn-lg btn-block" type="submit">Aceptar</button>
           </form>
         </div>
@@ -203,12 +292,15 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="./public/bootstrap4/js/popper.min.js"></script>
     <script src="./public/bootstrap4/js/bootstrap.min.js"></script>
     <script src="./public/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
     <script src="./public/bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js" charset="UTF-8"></script>
 
     <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
+      var jobIndex = 1;
+
       (function() {
         'use strict';
 
@@ -233,6 +325,85 @@
           format: "dd/mm/yyyy",
           language: "es"
       })
+      $('#desde1').datepicker({
+          format: "dd/mm/yyyy",
+          language: "es"
+      })
+      $('#hasta1').datepicker({
+          format: "dd/mm/yyyy",
+          language: "es"
+      })
+
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+
+      $('#remove-job').click(function(event) {
+        event.preventDefault()
+        event.stopPropagation()
+        if (jobIndex <= 1) {
+
+        } else {
+          var selector = "#job-row-" + jobIndex.toString()
+          document.querySelector(selector).remove()
+          jobIndex -= 1
+        }
+      })
+
+      $('#add-job').click(function(event) {
+        console.log("asdd")
+        event.preventDefault()
+        event.stopPropagation()
+        jobIndex += 1
+        document.querySelector("#jobs-container").innerHTML += `
+                  <div id=${"job-row-" + jobIndex.toString()}>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for=${"empresa" + jobIndex.toString()}>Empresa</label>
+                        <input type="text" class="form-control" id=${"empresa" + jobIndex.toString()} placeholder="Empresa" required>
+                        <div class="invalid-feedback">
+                          El campo es obligatorio.
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for=${"tarea" + jobIndex.toString()}>Tarea o cargo</label>
+                        <input type="text" class="form-control" id=${"tarea" + jobIndex.toString()} placeholder="Tarea o cargo" required>
+                        <div class="invalid-feedback">
+                          El campo es obligatorio.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for=${"desde" + jobIndex.toString()}>Desde</label>
+                        <input type="text" class="form-control" id=${"desde" + jobIndex.toString()} placeholder="dd/mm/aaaa" value="" required>
+                        <div class="invalid-feedback">
+                          Ingrese una fecha valida en el formato dd/mm/yyyy
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for=${"hasta" + jobIndex.toString()}>Hasta</label>
+                        <input type="text" class="form-control" id=${"hasta" + jobIndex.toString()} placeholder="dd/mm/aaaa" value="" required>
+                        <div class="invalid-feedback">
+                          Ingrese una fecha valida en el formato dd/mm/yyyy
+                        </div>
+                      </div>
+                    </div>
+
+                    <hr class="mb-4">
+                  </div>`
+
+
+              $('#desde' + jobIndex.toString()).datepicker({
+                  format: "dd/mm/yyyy",
+                  language: "es"
+              })
+              $('#hasta' + jobIndex.toString()).datepicker({
+                  format: "dd/mm/yyyy",
+                  language: "es"
+              })
+      })
+
     </script>
   </body>
 </html>
